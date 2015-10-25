@@ -1,3 +1,19 @@
-* {
-  margin:0;
+$background: #f94c00;
+$color:#ffffff;
+
+header {
+  width:100%;
+  background:$background;
+  color:$color;
+  font-size:18px;
+  text-align:center;
+  line-height: 25px;
+  .header-guest {
+    padding:40px;
+  }
+  .name {
+    font-size:18px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
 }

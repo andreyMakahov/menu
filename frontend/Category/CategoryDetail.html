@@ -1,0 +1,13 @@
+<script type="text/template" id="template-category-detail">
+    <div class="category-detail">
+        <div class="category-title">
+            <%= title %>
+        </div>
+        <div class="title-separator"></div>
+        <ul class="dishes">
+            <% dishes.forEach(function(item) { %>
+                <li><%= _.template($('#template-dish').html())(item) %></li>
+            <% }); %>
+        </ul>
+    </div>
+</script>

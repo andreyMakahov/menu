@@ -1,6 +1,9 @@
-<script type="text/template" id="layout">
-    <%= _.template($('#header').html())() %>
-    <div class="content">
-        module
-    </div>
+<script type="text/template" id="template-layout">
+    <%= _.template($('#template-header').html())({
+        authorized: authorized,
+        table:table,
+        code:code,
+        summary: summary
+    }) %>
+    <div class="content"></div>
 </script>

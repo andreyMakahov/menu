@@ -6,13 +6,14 @@ var gulp = require('gulp'),
     wrapper = require('gulp-wrapper'),
     addSrc = require('gulp-add-src');
 
-gulp.task('default', ['webserver', 'styles', 'scripts'], function() {});
+gulp.task('default', ['webserver', 'styles', 'scripts', 'watch'], function() {});
 
 gulp.task('styles', function() {
-    return gulp.src(['frontend/**/*.scss'])
+    return gulp.src(['frontend/Layout/Reset.css', 'frontend/**/*.scss', 'frontend/**/*.css'])
         .pipe(sass())
         .pipe(concat('style.css'))
-        .pipe(gulp.dest('build'));
+        .pipe(gulp.dest('build'))
+        .pipe(connect.reload());
 });
 
 gulp.task('scripts', function() {
@@ -32,11 +33,17 @@ gulp.task('scripts', function() {
             'frontend/**/*.js'
         ]))
         .pipe(concat('main.js'))
-        .pipe(gulp.dest('build'));
+        .pipe(gulp.dest('build'))
+        .pipe(connect.reload());
 });
 
 gulp.task('webserver', function() {
     connect.server({
         livereload:true
     })
+});
+
+gulp.task('watch', function() {
+    gulp.watch(['frontend/**/*.js', 'frontend/**/*.html'], ['scripts'], function() {});
+    gulp.watch('frontend/**/*.scss', ['styles'], function() {});
 });

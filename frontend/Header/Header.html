@@ -1,5 +1,15 @@
-<script type="text/template" id="header">
+<script type="text/template" id="template-header">
     <header>
-        header
+    <% if(!authorized) { %>
+        <div class="header-guest">
+            Добро пожаловать <br> в <span class="name">айдабаран</span>
+        </div>
+    <% } else { %>
+        <%= _.template($('#template-menu').html())({
+            table:table,
+            code:code,
+            summary: summary
+        }) %>
+    <% } %>
     </header>
 </script>

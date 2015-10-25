@@ -1,0 +1,9 @@
+<script type="text/template" id="template-category-list">
+    <div class="category">
+        <ul>
+            <% category.forEach(function(item) { %>
+                <li><%= _.template($('#template-category').html())(item) %></li>
+            <% }); %>
+        </ul>
+    </div>
+</script>
