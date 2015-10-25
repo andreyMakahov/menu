@@ -1,0 +1,36 @@
+<script type="text/template" id="template-dish-detail">
+    <div class="dish-detail">
+        <div class="category-title">
+            <%= categoryTitle %>
+        </div>
+        <div class="dish-header">
+            <%= dish.title %>
+        </div>
+
+        <div class="dish-container">
+            <div class="slider-wrapper">
+                <ul class="dish-slider">
+                    <% dish.images.forEach(function(item) { %>
+                        <li><img src="<%= item %>" alt=""/></li>
+                    <% }); %>
+                </ul>
+                <div id="slider-prev"></div>
+                <div id="slider-next"></div>
+            </div>
+
+            <div class="dish-data">
+                <div class="dish-title"><%= dish.title %></div>
+                <div class="dish-price"><%= dish.price %></div>
+            </div>
+            <div class="dish-description"><%= dish.description %></div>
+            <%= _.template($('#template-dish-counter').html())() %>
+            <div class="wishes">
+                <div class="wishes-title">Пожелания к обеду (без лука, без соли):</div>
+                <div class="wishes-tags">
+                    <div class="wish">без лука</div>
+                    <div class="wish">без соли</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

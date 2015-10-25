@@ -19,6 +19,7 @@
   "dependencies": {
     "page": "visionmedia/page.js#~1.6.4",
     "lodash": "~3.10.1",
-    "jquery": "~2.1.4"
+    "jquery": "~2.1.4",
+    "bxslider-4": "~4.2.5"
   }
 }

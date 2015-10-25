@@ -11,6 +11,7 @@ function Router(options) {
     page('/', this.ctrl.auth);
     page('/category', this.ctrl.category);
     page('/category/:id', this.ctrl.categoryDetail);
+    page('/dish/:id', this.ctrl.dishDetail);
 
     page(this.options);
 }
@@ -54,17 +55,41 @@ Router.prototype.ctrl = {
                 {
                     ico: '/frontend/Category/img/dish-ico.jpg',
                     name: 'Шашлык куриный',
+                    count: '(450мг)',
                     description:'курица, овощи',
                     price:123
                 },
                 {
                     ico: '/frontend/Category/img/dish-ico.jpg',
                     name: 'Шашлык куриный',
+                    count: '(450мг)',
                     description:'курица, овощи',
                     price:123
                 }
 
             ]
         }));
+    },
+    dishDetail: function() {
+        $('.content').append(_.template($('#template-dish-detail').html())({
+            categoryTitle: 'Бар',
+            dish: {
+                title: 'Лимонал Арбузный',
+                images: [
+                    '/frontend/Category/img/dish-image.jpg',
+                    '/frontend/Category/img/dish-image.jpg',
+                    '/frontend/Category/img/dish-image.jpg'
+                ],
+                count: '400мл',
+                price: '480p',
+                description: 'Арбуз, мята'
+            }
+        }));
+        $('.dish-slider').bxSlider({
+            nextText: '>',
+            prevText: '<',
+            nextSelector: '#slider-next',
+            prevSelector: '#slider-prev'
+        });
     }
 };

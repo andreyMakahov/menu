@@ -9,11 +9,16 @@ var gulp = require('gulp'),
 gulp.task('default', ['webserver', 'styles', 'scripts', 'watch'], function() {});
 
 gulp.task('styles', function() {
-    return gulp.src(['frontend/Layout/Reset.css', 'frontend/**/*.scss', 'frontend/**/*.css'])
-        .pipe(sass())
-        .pipe(concat('style.css'))
-        .pipe(gulp.dest('build'))
-        .pipe(connect.reload());
+    return gulp.src([
+        'frontend/Layout/Reset.css',
+        'frontend/**/*.scss',
+        'bower_components/bxslider-4/dist/jquery.bxslider.css',
+        'frontend/**/*.css'
+    ])
+    .pipe(sass())
+    .pipe(concat('style.css'))
+    .pipe(gulp.dest('build'))
+    .pipe(connect.reload());
 });
 
 gulp.task('scripts', function() {
@@ -30,6 +35,7 @@ gulp.task('scripts', function() {
             'bower_components/jquery/dist/jquery.js',
             'bower_components/lodash/lodash.js',
             'bower_components/page/page.js',
+            'bower_components/bxslider-4/dist/jquery.bxslider.js',
             'frontend/**/*.js'
         ]))
         .pipe(concat('main.js'))
