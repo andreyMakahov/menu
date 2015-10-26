@@ -1,16 +1,15 @@
-<script type="text/template" id="template-auth">
-    <div class="auth">
+<script type="text/template" id="template-table-is-busy">
+    <div class="table-is-busy">
+        <div class="table-is-busy-description">
+            К сожалению стол уже занят. Если вы <br> являетесь гостем стола - введите код
+        </div>
         <form action="">
             <div class="input-field-wrapper">
-                <div class="input-label">№ стола</div>
-                <input name="table" type="text" class="input" />
-            </div>
-            <div class="input-field-wrapper">
-                <div class="input-label">Кол-во гостей</div>
-                <input name="guestCount" type="text" class="input" />
+                <div class="input-label">Код</div>
+                <input type="text" name="code" class="input" />
             </div>
             <div class="submit-cont">
-                <input type="submit" class="button" value="Войти" />
+                <input type="submit" class="button" value="ОК" />
             </div>
         </form>
 
@@ -18,7 +17,7 @@
 
         <div class="explanation">
             <div class="explanation-description">
-                Если у Вас есть вопросы или что-то <br/> не получается - вызовите официанта
+                Если стол пустой, позовите <br> официанта для открытия стола
             </div>
             <div class="explanation-ico">
                 <img src="/frontend/Auth/img/waiter.png" alt=""/>

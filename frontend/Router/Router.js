@@ -9,9 +9,11 @@ function Router(options) {
 
     page('*', this.ctrl.before, this.ctrl.layout);
     page('/', this.ctrl.auth);
+    page('/tableBusy', this.ctrl.tableBusy);
     page('/category', this.ctrl.category);
     page('/category/:id', this.ctrl.categoryDetail);
     page('/dish/:id', this.ctrl.dishDetail);
+    page('/orders', this.ctrl.orders);
 
     page(this.options);
 }
@@ -33,6 +35,9 @@ Router.prototype.ctrl = {
     },
     auth: function(ctx, next) {
         $('.content').append(_.template($('#template-auth').html())());
+    },
+    tableBusy: function(ctx, next) {
+        $('.content').append(_.template($('#template-table-is-busy').html())());
     },
     category: function(ctx, next) {
         $('.content').append(_.template($('#template-category-list').html())({
@@ -91,5 +96,39 @@ Router.prototype.ctrl = {
             nextSelector: '#slider-next',
             prevSelector: '#slider-prev'
         });
+    },
+    orders: function(ctx, next) {
+        $('.content').append(_.template($('#template-orders').html())({
+            myOrderSum: '897p',
+            companyOrderSum:'2342p',
+            confirmed: [
+                {
+                    isMy: true,
+                    title: 'Шашлык куриный',
+                    price: '89p.',
+                    count:2,
+                    sum:'123p.'
+                },
+                {
+                    isMy: false,
+                    title: 'Шашлык куриный',
+                    price: '899p.',
+                    count:5,
+                    sum:'123p.'
+                }
+            ],
+            notConfirmed: [
+                {
+                    isMy: true,
+                    title: 'Шашлык куриный',
+                    price: '89p.'
+                },
+                {
+                    isMy: false,
+                    title: 'Шашлык куриный',
+                    price: '899p.'
+                }
+            ]
+        }));
     }
 };

@@ -1,0 +1,49 @@
+<script type="text/template" id="template-orders">
+    <div class="orders">
+        <div class="confirmed-orders">
+            Подтвержденные заказы
+        </div>
+        <div class="my-orders">Мои</div>
+        <% confirmed.forEach(function(item) { %>
+            <%=_.template($('#template-confirmed-order').html())(item) %>
+        <% }); %>
+
+        <div class="order-result">
+            <div class="order-result-left">
+                <div>Мой счет</div>
+                <div>Общий счет</div>
+            </div>
+            <div class="order-result-right">
+                <div><%= myOrderSum %></div>
+                <div><%= companyOrderSum %></div>
+            </div>
+        </div>
+    </div>
+    <div class="orders">
+        <div class="not-confirmed-orders">
+            Неподтвержденные заказы
+        </div>
+        <% notConfirmed.forEach(function(item) { %>
+            <%=_.template($('#template-not-confirmed-order').html())(item)%>
+        <% }); %>
+    </div>
+
+    <hr class="separator" />
+
+    <div class="explanation">
+        <div class="explanation-description">
+            Вам необходимо подтвердить заказ,<br> чтобы его начали готовить
+        </div>
+        <div class="submit-cont">
+            <input type="submit" class="button" value="Подтвердить заказ" />
+        </div>
+        <div class="submit-cont">
+            <div class="button-label">Оплатить счет</div>
+            <input type="submit" class="button" value="Наличные" />
+        </div>
+        <div class="thanks">
+            Спасибо, официант скоро принесет Вам счет!<br>
+            Также мы будем рады Вашей <br> <a href="#">оценке и комментариям</a>
+        </div>
+    </div>
+</script>

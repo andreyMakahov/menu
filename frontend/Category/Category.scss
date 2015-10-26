@@ -80,7 +80,7 @@
   padding-left: 45px;
   background-size: contain;
   line-height: 30px;
-  margin-left: 50px;
+  margin: 7px 0 7px 50px;
 }
 
 .dish-detail {
@@ -137,6 +137,7 @@
       .wishes-tags {
         margin: 15px 0;
         .wish {
+          cursor:pointer;
           color: #f94c00;
           background: #efeded;
           display: inline-block;

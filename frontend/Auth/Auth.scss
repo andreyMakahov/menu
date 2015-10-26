@@ -1,9 +1,9 @@
-.table, .guests, .questions-description{
+.input-field-wrapper, .explanation-description, .table-is-busy-description, .explanation-ico, .wifier {
   width: 100%;
   text-align: center;
   margin:30px 0;
 }
-.table-number, .guests-count {
+.input-label {
   margin-bottom:20px;
 }
 .call-waiter {
@@ -11,10 +11,14 @@
   vertical-align: top;
   line-height: 102px;
 }
-.questions-ico, .wifier {
-  width: 100%;
-  text-align: center;
-}
 .separator {
   width:90%;
+}
+.submit-cont {
+  width: 100%;
+  text-align: center;
+  margin:50px 0;
+}
+.table-is-busy-description {
+  color:#f94c00;
 }

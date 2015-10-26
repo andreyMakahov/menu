@@ -1,0 +1,13 @@
+<script type="text/template" id="template-confirmed-order">
+    <div class="order">
+        <table>
+            <tr class="<% if(isMy) {%> is-my <% } %>">
+                <td class="order-checkbox"></td>
+                <td class="order-title"><%= title %></td>
+                <td class="order-price"><%= price %></td>
+                <td class="order-count"><%= count %></td>
+                <td class="order-sum"><%= sum %></td>
+            </tr>
+        </table>
+    </div>
+</script>

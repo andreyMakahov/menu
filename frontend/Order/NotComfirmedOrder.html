@@ -1,0 +1,14 @@
+<script type="text/template" id="template-not-confirmed-order">
+    <div class="order">
+        <table>
+            <tr class="<% if(isMy) { %> is-my <% } %>">
+                <td class="order-checkbox"></td>
+                <td class="order-title"><%= title %></td>
+                <td class="order-price"><%= price %></td>
+            </tr>
+        </table>
+        <div class="order-actions">
+            <%= _.template($('#template-not-confirmed-order-actions').html())({price:price}) %>
+        </div>
+    </div>
+</script>
