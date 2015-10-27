@@ -7,18 +7,20 @@
         <% confirmed.forEach(function(item) { %>
             <%=_.template($('#template-confirmed-order').html())(item) %>
         <% }); %>
+    </div>
 
-        <div class="order-result">
-            <div class="order-result-left">
-                <div>Мой счет</div>
-                <div>Общий счет</div>
-            </div>
-            <div class="order-result-right">
-                <div><%= myOrderSum %></div>
-                <div><%= companyOrderSum %></div>
-            </div>
+    <div class="order-result">
+        <div class="order-result-left">
+            <div>Мой счет</div>
+            <div>Общий счет</div>
+        </div>
+        <div class="order-result-right">
+            <div><%= myOrderSum %></div>
+            <div><%= companyOrderSum %></div>
         </div>
     </div>
+    <div style="clear:both"></div>
+
     <div class="orders">
         <div class="not-confirmed-orders">
             Неподтвержденные заказы
@@ -35,11 +37,11 @@
             Вам необходимо подтвердить заказ,<br> чтобы его начали готовить
         </div>
         <div class="submit-cont">
-            <input type="submit" class="button" value="Подтвердить заказ" />
+            <input type="submit" class="button button-orange" value="Подтвердить заказ" />
         </div>
         <div class="submit-cont">
             <div class="button-label">Оплатить счет</div>
-            <input type="submit" class="button" value="Наличные" />
+            <input type="submit" class="button button-black" value="Наличные" />
         </div>
         <div class="thanks">
             Спасибо, официант скоро принесет Вам счет!<br>

@@ -1,5 +1,21 @@
 <script type="text/template" id="template-not-confirmed-order-actions">
-    <div class="delete-order">X</div>
-    <%= _.template($('#template-dish-counter').html())() %>
-    <div class="order-price"><%= price %></div>
+    <table class="order-action-row">
+        <tr>
+            <td>
+                <div class="delete-order">X</div>
+            </td>
+            <td>
+                <span class="action-minus">-</span>
+            </td>
+            <td>
+                <span class="count">12</span>
+            </td>
+            <td>
+                <span class="action-plus">+</span>
+            </td>
+            <td>
+                <div class="order-price"><%= price %></div>
+            </td>
+        </tr>
+    </table>
 </script>

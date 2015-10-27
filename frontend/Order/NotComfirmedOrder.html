@@ -1,9 +1,11 @@
 <script type="text/template" id="template-not-confirmed-order">
-    <div class="order">
-        <table>
+    <div class="order order-not-confirmed">
+        <table class="order-row">
             <tr class="<% if(isMy) { %> is-my <% } %>">
                 <td class="order-checkbox"></td>
-                <td class="order-title"><%= title %></td>
+                <td class="order-title">
+                    <div class="title-cont"><%= title %></div>
+                </td>
                 <td class="order-price"><%= price %></td>
             </tr>
         </table>

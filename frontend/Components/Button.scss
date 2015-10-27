@@ -1,13 +1,26 @@
 .button {
-  box-shadow: 0 0 6px 0 rgba(0, 1, 1, 0.294);
   width: 300px;
   height: 50px;
-  border: 1px solid #aaa;
   padding: 0 20px 0 20px;
   font-size: 18px;
   display: inherit;
   background: #fff;
   margin: auto;
   box-sizing: border-box;
+  border:none;
   cursor:pointer;
+  &.button-border {
+    border: 1px solid #aaa;
+  }
+  &.button-shadow {
+    box-shadow: 0 0 6px 0 rgba(0, 1, 1, 0.294);
+  }
+  &.button-orange {
+    background: #f94c00;
+    color:#fff;
+  }
+  &.button-black {
+    background: #000;
+    color:#fff;
+  }
 }

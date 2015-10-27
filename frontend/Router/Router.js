@@ -99,34 +99,34 @@ Router.prototype.ctrl = {
     },
     orders: function(ctx, next) {
         $('.content').append(_.template($('#template-orders').html())({
-            myOrderSum: '897p',
-            companyOrderSum:'2342p',
+            myOrderSum: '897 p.',
+            companyOrderSum:'2342 p.',
             confirmed: [
                 {
                     isMy: true,
                     title: 'Шашлык куриный',
-                    price: '89p.',
+                    price: '89 p.',
                     count:2,
-                    sum:'123p.'
+                    sum:'123 p.'
                 },
                 {
                     isMy: false,
                     title: 'Шашлык куриный',
-                    price: '899p.',
+                    price: '899 p.',
                     count:5,
-                    sum:'123p.'
+                    sum:'123 p.'
                 }
             ],
             notConfirmed: [
                 {
                     isMy: true,
                     title: 'Шашлык куриный',
-                    price: '89p.'
+                    price: '89 p.'
                 },
                 {
                     isMy: false,
                     title: 'Шашлык куриный',
-                    price: '899p.'
+                    price: '899 p.'
                 }
             ]
         }));
