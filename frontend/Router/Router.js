@@ -14,6 +14,7 @@ function Router(options) {
     page('/category/:id', this.ctrl.categoryDetail);
     page('/dish/:id', this.ctrl.dishDetail);
     page('/orders', this.ctrl.orders);
+    page('/feedback', this.ctrl.feedback);
 
     page(this.options);
 }
@@ -29,7 +30,8 @@ Router.prototype.ctrl = {
             authorized: true,
             table: 123,
             code: 345,
-            summary: 1234
+            summary: 1234,
+            feedback:true
         }));
         next();
     },
@@ -129,6 +131,11 @@ Router.prototype.ctrl = {
                     price: '899 p.'
                 }
             ]
+        }));
+    },
+    feedback: function(ctx, next) {
+        $('.content').append(_.template($('#template-feedback').html())({
+            feedback: true
         }));
     }
 };

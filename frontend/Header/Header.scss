@@ -8,8 +8,14 @@ header {
   font-size:18px;
   text-align:center;
   line-height: 25px;
-  .header-guest {
+  .header-guest, .header-feedback {
     padding:40px;
+  }
+  .header-feedback {
+    text-transform: uppercase;
+    SPAN {
+      font-weight: bold;
+    }
   }
   .name {
     font-size:18px;
