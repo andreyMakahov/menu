@@ -1,0 +1,29 @@
+<script type="text/template" id="template-header-menu">
+    <header>
+        <table class="menu">
+            <tr>
+                <td class="active">
+                    <div class="menu-item menu-title">
+                        Меню
+                    </div>
+                </td>
+                <td>
+                    <div class="menu-item menu-waiter">
+                        <img src="/frontend/Menu/img/waiter-ico.png" alt=""/>
+                    </div>
+                </td>
+                <td>
+                    <div class="menu-item menu-basket">
+                        <%= summary %>
+                    </div>
+                </td>
+                <td>
+                    <div class="menu-item menu-table">
+                        <div class="menu-table">стол: <span class="bold"><%= table %></span></div>
+                        <div class="menu-code">код: <span class="bold"><%= code %></span></div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </header>
+</script>

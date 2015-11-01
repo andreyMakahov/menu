@@ -1,6 +1,7 @@
 .menu {
   TD {
     min-width:145px;
+    cursor:pointer;
     &.active {
       background:#fff;
       color:#000;
@@ -18,7 +19,7 @@
       background:url('/frontend/Menu/img/menu-ico-active.png') no-repeat;
     }
   }
-  .menu-bucket {
+  .menu-basket {
     background:url('/frontend/Menu/img/bucket-ico.png') no-repeat;
     padding-left: 35px;
     background-size: contain;

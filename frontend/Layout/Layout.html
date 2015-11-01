@@ -1,10 +1,16 @@
 <script type="text/template" id="template-layout">
-    <%= _.template($('#template-header').html())({
-        authorized: authorized,
-        table:table,
-        code:code,
-        summary: summary,
-        feedback:feedback
-    }) %>
-    <div class="content"></div>
+    <% if(data.authorized) { %>
+        <% if(data.feedback) { %>
+            <%= _.template($('#template-header-feedback').html())() %>
+        <% } else { %>
+            <%= _.template($('#template-header-menu').html())({
+                table:data.table,
+                code:data.code,
+                summary: data.summary
+            }) %>
+        <% } %>
+    <% } else { %>
+        <%= _.template($('#template-header-guest').html())() %>
+    <% } %>
+    <div class="content <%= data.page %>"></div>
 </script>

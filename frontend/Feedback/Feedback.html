@@ -5,31 +5,35 @@
         </div>
         <form action="">
             <table class="rate-table">
-                <tr>
+                <tr class="waiter-rate">
                     <td>Официанты</td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
+                    <td data-rate="1">1</td>
+                    <td data-rate="2">2</td>
+                    <td data-rate="3">3</td>
+                    <td data-rate="4">4</td>
+                    <td data-rate="5">5</td>
                 </tr>
-                <tr>
+                <tr class="dish-rate">
                     <td>Блюдо</td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
+                    <td data-rate="1">1</td>
+                    <td data-rate="2">2</td>
+                    <td data-rate="3">3</td>
+                    <td data-rate="4">4</td>
+                    <td data-rate="5">5</td>
                 </tr>
-                <tr>
-                    <td>Скорость обслуживания</td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
+                <tr class="speed-rate">
+                    <td >Скорость обслуживания</td>
+                    <td data-rate="1">1</td>
+                    <td data-rate="2">2</td>
+                    <td data-rate="3">3</td>
+                    <td data-rate="4">4</td>
+                    <td data-rate="5">5</td>
                 </tr>
             </table>
+
+            <input type="hidden" name="waiterRate" id="waiterRate" />
+            <input type="hidden" name="dishRate" id="dishRate" />
+            <input type="hidden" name="speedRate" id="speedRate" />
 
             <hr class="separator" />
 
@@ -37,6 +41,9 @@
                 Если у Вас есть комментарии или <br/> пожелания по сервису или ресторану, <br/> оставьте их, пожалуйста, внизу:
             </div>
             <textarea name="wish" class="textarea"></textarea>
+            <div class="submit-cont">
+                <input type="submit" class="button button-shadow button-border" value="Отправить" />
+            </div>
         </form>
     </div>
 </script>

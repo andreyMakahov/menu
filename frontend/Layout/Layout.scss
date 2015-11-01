@@ -5,6 +5,14 @@ body {
   width:640px;
   margin:auto;
 }
+.content {
+  &.auth, &.feedback {
+    padding-top:150px;
+  }
+  &.category, &.category-detail, &.dish-detail, &.order {
+    padding-top:50px;
+  }
+}
 .bold {
   font-weight: bold;
 }

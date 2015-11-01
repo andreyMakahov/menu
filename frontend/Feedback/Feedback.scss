@@ -12,6 +12,10 @@
           text-align: left;
           width:50%;
         }
+        &.selected {
+          background-color:#f94c00;
+          color:#fff;
+        }
       }
     }
   }

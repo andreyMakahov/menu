@@ -7,7 +7,6 @@ $(function() {
 function Router(options) {
     this.options = options;
 
-    page('*', this.ctrl.before, this.ctrl.layout);
     page('/', this.ctrl.auth);
     page('/tableBusy', this.ctrl.tableBusy);
     page('/category', this.ctrl.category);
@@ -20,30 +19,63 @@ function Router(options) {
 }
 
 Router.prototype.ctrl = {
-    before: function(ctx, next) {
-        console.log('before');
-        next();
-    },
-    layout: function (ctx, next) {
+    auth: function(ctx, next) {
         var tmpl = _.template(document.getElementById('template-layout').innerHTML);
         $('body').append(tmpl({
-            authorized: true,
-            table: 123,
-            code: 345,
-            summary: 1234,
-            feedback:true
+            data: {
+                page:'auth',
+                authorized: false
+            }
         }));
-        next();
-    },
-    auth: function(ctx, next) {
         $('.content').append(_.template($('#template-auth').html())());
     },
     tableBusy: function(ctx, next) {
+        var tmpl = _.template(document.getElementById('template-layout').innerHTML);
+        $('body').append(tmpl({
+            data: {
+                page:'auth',
+                authorized: false
+            }
+        }));
         $('.content').append(_.template($('#template-table-is-busy').html())());
     },
     category: function(ctx, next) {
+        var tmpl = _.template(document.getElementById('template-layout').innerHTML);
+        $('body').append(tmpl({
+            data: {
+                page:'category',
+                authorized: true,
+                table: 123,
+                code: 345,
+                summary: 1234
+            }
+        }));
         $('.content').append(_.template($('#template-category-list').html())({
             category: [
+                {
+                    image: '/frontend/Category/img/lunch.jpg',
+                    name: 'Ланчи'
+                },
+                {
+                    image: '/frontend/Category/img/hot.jpg',
+                    name: 'Горячие блюда'
+                },
+                {
+                    image: '/frontend/Category/img/lunch.jpg',
+                    name: 'Ланчи'
+                },
+                {
+                    image: '/frontend/Category/img/hot.jpg',
+                    name: 'Горячие блюда'
+                },
+                {
+                    image: '/frontend/Category/img/lunch.jpg',
+                    name: 'Ланчи'
+                },
+                {
+                    image: '/frontend/Category/img/hot.jpg',
+                    name: 'Горячие блюда'
+                },
                 {
                     image: '/frontend/Category/img/lunch.jpg',
                     name: 'Ланчи'
@@ -56,6 +88,16 @@ Router.prototype.ctrl = {
         }));
     },
     categoryDetail: function() {
+        var tmpl = _.template(document.getElementById('template-layout').innerHTML);
+        $('body').append(tmpl({
+            data: {
+                page:'category-detail',
+                authorized: true,
+                table: 123,
+                code: 345,
+                summary: 1234
+            }
+        }));
         $('.content').append(_.template($('#template-category-detail').html())({
             title: 'Горячее',
             dishes: [
@@ -78,6 +120,16 @@ Router.prototype.ctrl = {
         }));
     },
     dishDetail: function() {
+        var tmpl = _.template(document.getElementById('template-layout').innerHTML);
+        $('body').append(tmpl({
+            data: {
+                page:'dish-detail',
+                authorized: true,
+                table: 123,
+                code: 345,
+                summary: 1234
+            }
+        }));
         $('.content').append(_.template($('#template-dish-detail').html())({
             categoryTitle: 'Бар',
             dish: {
@@ -100,6 +152,16 @@ Router.prototype.ctrl = {
         });
     },
     orders: function(ctx, next) {
+        var tmpl = _.template(document.getElementById('template-layout').innerHTML);
+        $('body').append(tmpl({
+            data: {
+                page:'order',
+                authorized: true,
+                table: 123,
+                code: 345,
+                summary: 1234
+            }
+        }));
         $('.content').append(_.template($('#template-orders').html())({
             myOrderSum: '897 p.',
             companyOrderSum:'2342 p.',
@@ -134,8 +196,17 @@ Router.prototype.ctrl = {
         }));
     },
     feedback: function(ctx, next) {
+        var tmpl = _.template(document.getElementById('template-layout').innerHTML);
+        $('body').append(tmpl({
+            data: {
+                page:'feedback',
+                authorized: true,
+                feedback:true
+            }
+        }));
         $('.content').append(_.template($('#template-feedback').html())({
             feedback: true
         }));
+        Feedback.initEvents();
     }
 };

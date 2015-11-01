@@ -8,7 +8,11 @@ header {
   font-size:18px;
   text-align:center;
   line-height: 25px;
+  position: fixed;
+  top: 0;
+  z-index: 1;
   .header-guest, .header-feedback {
+    text-transform: uppercase;
     padding:40px;
   }
   .header-feedback {

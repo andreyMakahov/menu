@@ -63,7 +63,6 @@
               SPAN {
                 padding: 0 10px;
                 &.action-minus, &.action-plus {
-                  cursor:pointer;
                   font-weight: bold;
                 }
               }
@@ -73,6 +72,9 @@
       }
     }
   }
+}
+.dish-counter .action-minus, .dish-counter .action-plus {
+  cursor:pointer;
 }
 
 .category-title {
@@ -164,5 +166,8 @@
 }
 
 @media screen and (max-width:1119px) {
-
+  .category LI .category-item {
+    height:250px;
+    overflow:hidden;
+  }
 }
