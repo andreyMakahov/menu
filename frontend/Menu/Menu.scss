@@ -2,6 +2,10 @@
   TD {
     min-width:145px;
     cursor:pointer;
+    A {
+      text-decoration:none;
+      color:inherit;
+    }
     &.active {
       background:#fff;
       color:#000;

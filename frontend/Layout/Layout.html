@@ -1,4 +1,5 @@
 <script type="text/template" id="template-layout">
+
     <% if(data.authorized) { %>
         <% if(data.feedback) { %>
             <%= _.template($('#template-header-feedback').html())() %>
@@ -13,4 +14,5 @@
         <%= _.template($('#template-header-guest').html())() %>
     <% } %>
     <div class="content <%= data.page %>"></div>
+
 </script>

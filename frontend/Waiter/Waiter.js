@@ -7,7 +7,7 @@ var Waiter = {
 
         }).done(function() {
             Spinner.hide();
-            alert('Официант подойдет к Вам в пары минут');
+            alert('Официант подойдет к Вам в течении пары минут');
         })
         .fail(function() {
             Spinner.hide();

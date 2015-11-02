@@ -21,7 +21,7 @@ function Router(options) {
 Router.prototype.ctrl = {
     auth: function(ctx, next) {
         var tmpl = _.template(document.getElementById('template-layout').innerHTML);
-        $('body').append(tmpl({
+        $('.page-wrapper').empty().append(tmpl({
             data: {
                 page:'auth',
                 authorized: false
@@ -31,7 +31,7 @@ Router.prototype.ctrl = {
     },
     tableBusy: function(ctx, next) {
         var tmpl = _.template(document.getElementById('template-layout').innerHTML);
-        $('body').append(tmpl({
+        $('.page-wrapper').empty().append(tmpl({
             data: {
                 page:'auth',
                 authorized: false
@@ -41,7 +41,7 @@ Router.prototype.ctrl = {
     },
     category: function(ctx, next) {
         var tmpl = _.template(document.getElementById('template-layout').innerHTML);
-        $('body').append(tmpl({
+        $('.page-wrapper').empty().append(tmpl({
             data: {
                 page:'category',
                 authorized: true,
@@ -89,7 +89,7 @@ Router.prototype.ctrl = {
     },
     categoryDetail: function() {
         var tmpl = _.template(document.getElementById('template-layout').innerHTML);
-        $('body').append(tmpl({
+        $('.page-wrapper').empty().append(tmpl({
             data: {
                 page:'category-detail',
                 authorized: true,
@@ -121,7 +121,7 @@ Router.prototype.ctrl = {
     },
     dishDetail: function() {
         var tmpl = _.template(document.getElementById('template-layout').innerHTML);
-        $('body').append(tmpl({
+        $('.page-wrapper').empty().append(tmpl({
             data: {
                 page:'dish-detail',
                 authorized: true,
@@ -153,7 +153,7 @@ Router.prototype.ctrl = {
     },
     orders: function(ctx, next) {
         var tmpl = _.template(document.getElementById('template-layout').innerHTML);
-        $('body').append(tmpl({
+        $('.page-wrapper').empty().append(tmpl({
             data: {
                 page:'order',
                 authorized: true,
@@ -197,7 +197,7 @@ Router.prototype.ctrl = {
     },
     feedback: function(ctx, next) {
         var tmpl = _.template(document.getElementById('template-layout').innerHTML);
-        $('body').append(tmpl({
+        $('.page-wrapper').empty().append(tmpl({
             data: {
                 page:'feedback',
                 authorized: true,

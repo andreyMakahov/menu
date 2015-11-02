@@ -4,17 +4,17 @@
             <tr>
                 <td class="active">
                     <div class="menu-item menu-title">
-                        Меню
+                        <a href="/category">Меню</a>
                     </div>
                 </td>
                 <td>
-                    <div class="menu-item menu-waiter">
+                    <div class="menu-item menu-waiter" onclick="Waiter.call()">
                         <img src="/frontend/Menu/img/waiter-ico.png" alt=""/>
                     </div>
                 </td>
                 <td>
                     <div class="menu-item menu-basket">
-                        <%= summary %>
+                        <a href="/orders"><%= summary %></a>
                     </div>
                 </td>
                 <td>
